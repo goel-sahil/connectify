@@ -58,7 +58,6 @@ io.on("connection", (socket) => {
 
   // Handle SDP processing for WebRTC connections
   socket.on("SDPProcess", (data) => {
-    console.log("SDPProcess", data);
     socket.to(data.to_connid).emit("SDPProcess", {
       message: data.message,
       from_connid: socket.id,
